@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShowOnWheels - Your Mobile Cinema Experience</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="logo.jpg" type="image/jpeg">
+</head>
+<body>
+    <div class="preloader"><div class="film-reel"></div><div class="preloader-text">ShowOnWheels</div></div>
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="logo.png" alt="ShowOnWheels Logo">
+                <span>ShowOnWheels</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active"><span>Home</span></a></li>
+                    <li><a href="about.html"><span>About Us</span></a></li>
+                    <li><a href="upcoming.html"><span>Upcoming Movies</span></a></li>
+                    <li><a href="contact.html"><span>Contact Us</span></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-text">
+                <h1 class="text-reveal">Experience Cinema, Anywhere.</h1>
+                <p class="fade-in-up">Bringing the magic of movies directly to your community.</p>
+            </div>
+        </section>
+
+        <section class="trailer-feature container animated-section">
+            <h2>Featured Trailer</h2>
+            <div class="trailer-content">
+                <div class="video-container">
+                    <iframe src=https://www.youtube.com/embed/GJ1jrCnm-t8?si=PupcQIdU8-QGBB14" title="Featured Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <div class="trailer-description">
+                    <h3>Chainsaw Man The Movie: Reze Arc New Trailer</h3>
+                    <p>Denji akhirnya menemukan kebahagiaan yang ia impikan dalam sosok Reze, seorang gadis ceria yang memberinya harapan cinta.
+                        Namun, romansa manis mereka berubah menjadi mimpi buruk saat identitas asli Reze terungkap: ia adalah Bomb Devil yang mematikan, 
+                        dikirim untuk merebut jantung Denji. Kini, Denji harus menghadapi pertempuran eksplosif dan tragis melawan satu-satunya orang 
+                        yang pernah membuatnya merasa dicintai.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="movie-gallery animated-section">
+            <div class="container">
+                <h2>Now Showing</h2>
+                <div class="gallery-grid">
+                    <div class="movie-item"><img src="https://m.media-amazon.com/images/M/MV5BMWRjNzRhNWItNGEzNS00ZDA4LWFmNjEtNTVmYmQ3NGJlYWNkXkEyXkFqcGc@._V1_.jpg" alt="Movie 1"><div class="movie-info"><h3>Detective Conan The Movie</h3></div></div>
+                    <div class="movie-item"><img src="https://m.media-amazon.com/images/M/MV5BOGMwZGJiM2EtMzEwZC00YTYzLWIxNzYtMmJmZWNlZjgxZTMwXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Movie 2"><div class="movie-info"><h3>Superman (2025)</h3></div></div>
+                    <div class="movie-item"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSN__J0uCsfv6c2nm9iI_bV6sDhaUWbsHEbd51mvjflKOtHRe2x" alt="Movie 3"><div class="movie-info"><h3>F1 The Movie</h3></div></div>
+                    <div class="movie-item"><img src="https://sm.ign.com/ign_in/cover/h/how-to-tra/how-to-train-your-dragon-live-action_zbyf.jpg" alt="Movie 4"><div class="movie-info"><h3>How To Train Your Dragon</h3></div></div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="operating-info container animated-section">
+            <h3>Currently Operating in</h3>
+            <ul class="city-list-static">
+                <li>New York, NY</li>
+                <li>Los Angeles, CA</li>
+                <li>Chicago, IL</li>
+                <li>Houston, TX</li>
+                <li>Phoenix, AZ</li>
+                <li>Miami, FL</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>For inquiries about upcoming movies, call us at:</p>
+            <p class="phone-number">(62) 8126 0672 500</p>
+            <p>© 2025 ShowOnWheels Inc. Crafted by a hundred professionals.</p>
+        </div>
+    </footer>
+
+    <script>
+        const cursorDot=document.querySelector(".cursor-dot"),cursorOutline=document.querySelector(".cursor-outline");window.addEventListener("mousemove",e=>{const{clientX:t,clientY:o}=e;cursorDot.style.left=`${t}px`,cursorDot.style.top=`${o}px`,cursorOutline.animate({left:`${t}px`,top:`${o}px`},{duration:500,fill:"forwards"})}),window.addEventListener("load",()=>{document.querySelector(".preloader").classList.add("hidden")}),document.querySelectorAll(".movie-item, .upcoming-movie-card, .strength-card").forEach(e=>{e.addEventListener("mousemove",t=>{const o=e.getBoundingClientRect(),c=t.clientX-o.left,r=t.clientY-o.top,s=-1*((c-o.width/2)/(o.width/2))*10,i=(r-o.height/2)/(o.height/2)*10;e.style.setProperty("--rotateX",`${i}deg`),e.style.setProperty("--rotateY",`${s}deg`),e.style.setProperty("--x",`${c}px`),e.style.setProperty("--y",`${r}px`)}),e.addEventListener("mouseleave",()=>{e.style.setProperty("--rotateX","0deg"),e.style.setProperty("--rotateY","0deg")})});
+    </script>
+</body>
+</html>
